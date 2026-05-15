@@ -507,13 +507,15 @@
       .achievements-strip { grid-template-columns: repeat(3, 1fr) !important; }
       .hero-top, .about-grid, .contact-inner,
       .services-grid, .approach-head { grid-template-columns: 1fr; gap: 32px; }
-      .hero-card { padding: 40px 24px 0; border-radius: 20px; }
-      .hero-right { max-height: 340px; overflow: hidden; }
-      .hero-img { max-height: 320px; object-position: center top; }
+      .hero-card { padding: 36px 20px 0; border-radius: 20px; }
+      .hero-left { padding-bottom: 32px; }
+      .hero-right { max-height: 360px; overflow: hidden; }
+      .hero-img { max-height: 340px; object-position: center top; }
       .float-rating { left: 0; bottom: 16px; }
       .float-exp    { right: 0; top: 16px; }
       .sketch-arrow { display: none; }
-      .stats-card { grid-template-columns: 1fr 1fr; padding: 32px 24px; }
+      .stats-card { grid-template-columns: 1fr 1fr; padding: 28px 16px; overflow: hidden; }
+      .stat-num { font-size: 30px; }
       .stat-item:nth-child(even) { border-right: none; }
       .stat-item { border-bottom: 1px solid var(--border); padding-bottom: 16px; }
       .stat-item:nth-last-child(-n+2) { border-bottom: none; }
@@ -525,19 +527,22 @@
       .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
       .navbar-inner { border-radius: 16px; padding: 10px 16px; }
       .nav-links { gap: 16px; }
-      section { padding-left: 24px !important; padding-right: 24px !important; }
-      #about { padding-left: 24px; padding-right: 24px; }
-      #services { padding-left: 0; padding-right: 0; }
-      .services-wrap { padding: 0 24px; }
+      #hero { padding: 0 16px 40px; }
+      #approach { padding: 64px 20px; }
+      #services { padding: 64px 0; }
+      .services-wrap { padding: 0 20px; }
       .services-tab { display: none; }
-      #testimonials { padding-left: 24px; padding-right: 24px; }
-      .contact-inner { padding: 48px 24px; }
-      .heading-xl { font-size: clamp(2rem, 8vw, 3.5rem); }
-      .heading-lg { font-size: clamp(1.6rem, 6vw, 2.8rem); }
-      .marquee-word { font-size: 28px; }
+      #about { padding: 64px 20px; }
+      #testimonials { padding: 0 20px 64px; }
+      .contact-inner { padding: 56px 20px; }
+      #contact { padding: 0; }
+      .heading-xl { font-size: clamp(1.85rem, 7.5vw, 3rem); line-height: 1.1; }
+      .heading-lg { font-size: clamp(1.55rem, 6vw, 2.5rem); }
+      .hero-subtext { max-width: 100%; font-size: 14px; }
+      .marquee-word { font-size: 26px; }
       .about-img { aspect-ratio: 4/3; }
     }
-    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; color: var(--text-dark); }
     .mobile-nav-link {
       font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800;
       color: var(--white); text-decoration: none; letter-spacing: -0.02em;
@@ -550,19 +555,40 @@
       .hamburger { display: flex; }
       .footer-top { grid-template-columns: 1fr; }
       .hero-btns { flex-direction: column; align-items: flex-start; gap: 12px; }
-      #hero { padding-left: 12px; padding-right: 12px; }
-      .hero-card { padding: 32px 20px 0; }
-      .stats-card { grid-template-columns: 1fr 1fr; gap: 0; }
-      .skills-cards { grid-template-columns: 1fr; }
-      .team-cards { grid-template-columns: 1fr; }
-      .team-card-img { aspect-ratio: 16/9; }
-      .testi-card { padding: 24px 20px; }
-      .contact-img-box { display: none; }
-      .contact-inner { flex-direction: column; padding: 48px 20px; }
-      .section-pill { font-size: 10px; }
-      .approach-head { gap: 20px; }
-      /* achievements strip: 2 cols on mobile */
+      #hero { padding: 0 12px 36px; }
+      .hero-card { padding: 28px 18px 0; }
+      .hero-star svg { width: 36px; height: 36px; }
+      .hero-left { padding-bottom: 28px; }
+      .heading-xl { font-size: clamp(1.65rem, 7vw, 2.2rem); line-height: 1.08; }
+      .heading-lg { font-size: clamp(1.4rem, 6vw, 1.9rem); }
+      .hero-subtext { font-size: 13.5px; margin: 14px 0 20px; }
+      .float-card { padding: 10px 14px; border-radius: 12px; }
+      .float-exp { font-size: 11px; }
+      .stats-card { overflow: hidden; padding: 24px 16px; }
+      .stat-num { font-size: 26px; }
       .achievements-strip { grid-template-columns: 1fr 1fr !important; }
+      .achievements-strip > div:last-child { grid-column: span 2; }
+      .achievements-strip > div { padding: 16px 12px; }
+      .achievements-strip > div > div:first-child { font-size: 18px !important; }
+      .achievements-strip > div > div:last-child { font-size: 10px !important; white-space: normal; }
+      .skills-cards { grid-template-columns: 1fr; }
+      .team-card-img { aspect-ratio: 16/9; }
+      .testi-card { padding: 24px 18px; }
+      .contact-img-box { display: none; }
+      .contact-inner { padding: 48px 18px 56px; }
+      #contact { padding: 0; }
+      .approach-head { gap: 20px; }
+      #approach { padding: 56px 16px; }
+      #services { padding: 56px 0; }
+      .services-wrap { padding: 0 16px; }
+      .service-row { padding: 16px 0; }
+      .svc-name { font-size: 15px; }
+      #about { padding: 56px 16px; }
+      #testimonials { padding: 0 16px 56px; }
+      .footer-inner { padding: 48px 20px 32px; }
+      .marquee-word { font-size: 20px; }
+      .svc-callout { left: 12px; right: 12px; bottom: 16px; }
+      .contact-info { font-size: 13px; }
     }
   </style>
 </head>
