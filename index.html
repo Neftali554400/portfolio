@@ -103,10 +103,14 @@
       background: var(--white);
       border-radius: 999px;
       padding: 10px 10px 10px 28px;
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex; align-items: center; gap: 0;
       box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
     }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links {
+      display: flex; list-style: none;
+      flex: 1; justify-content: space-evenly;
+      padding: 0 16px;
+    }
     .nav-links a {
       font-size: 14px; font-weight: 500; color: var(--text-dark);
       text-decoration: none; transition: color 0.2s;
@@ -623,23 +627,19 @@
 ═══════════════════════ -->
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="navbar-inner">
-    <!-- Left links -->
+    <!-- Logo — left -->
+    <a href="#" class="nav-logo" aria-label="Nef — home">Nef</a>
+
+    <!-- Links — spread evenly -->
     <ul class="nav-links" role="list">
       <li><a href="#approach">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#about">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
 
-    <!-- Center logo -->
-    <a href="#" class="nav-logo" aria-label="Nef — home">
-      Nef
-    </a>
-
-    <!-- Right links + CTA -->
-    <div style="display:flex;align-items:center;gap:28px;">
-      <ul class="nav-links" role="list">
-        <li><a href="#about">Work</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <!-- CTA + hamburger — right -->
+    <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
       <a href="#contact" class="btn btn-dark">Hire Me</a>
       <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
