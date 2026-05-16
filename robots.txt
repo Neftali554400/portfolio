@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://neftali554400.github.io/portfolio/sitemap.xml
+Sitemap: https://heynef.netlify.app/sitemap.xml
